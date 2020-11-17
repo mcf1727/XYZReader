@@ -67,6 +67,7 @@
             style="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/detail_metabar_byline_bottom_padding"
             tools:text="Article byline" />
 
         <ScrollView
