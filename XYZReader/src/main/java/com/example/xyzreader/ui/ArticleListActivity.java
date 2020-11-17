@@ -1,6 +1,5 @@
 package com.example.xyzreader.ui;
 
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -62,9 +61,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-//        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-//        final View toolbarContainerView = findViewById(R.id.toolbar_container);
-
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -79,9 +75,7 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         LoaderManager.getInstance(this).initLoader(0, null, this);
 
-//        if (savedInstanceState == null) {
-//            refresh();
-//        }
+        // Refresh the list when swiping down
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
