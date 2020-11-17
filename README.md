@@ -20,16 +20,21 @@ This project gives an opportunity to improve an app’s design, a vital skill fo
 ## Overview
 In this project, I redesign an app to follow the Material Design guidelines. I look specifically at issues called out in the UI Review to look for ways it could be improved.
 
-- UI before refactor 
-<div align="center">
-    <img width="300" alt="layout_phone" src="https://github.com/mcf1727/XYZReader/blob/master/photos/before1.jpg"/>     <img width="300" alt="layout_phone" src="https://github.com/mcf1727/XYZReader/blob/master/photos/before2.jpg"/>
-</div>
-<div align="center"><img width="600" alt="layout_tablet" src="https://github.com/mcf1727/XYZReader/blob/master/photos/before3.jpg"/></div>
-<div align="center"><img width="600" alt="layout_tablet" src="https://github.com/mcf1727/XYZReader/blob/master/photos/before4.jpg"/></div>
-
 - UI after refactor
 <div align="center">
     <img width="300" alt="layout_phone" src="https://github.com/mcf1727/XYZReader/blob/master/photos/after1.jpg"/>     <img width="300" alt="layout_phone" src="https://github.com/mcf1727/XYZReader/blob/master/photos/after2.jpg"/>
 </div>
+
 <div align="center"><img width="600" alt="layout_tablet" src="https://github.com/mcf1727/XYZReader/blob/master/photos/after3.jpg"/></div>
+
 <div align="center"><img width="600" alt="layout_tablet" src="https://github.com/mcf1727/XYZReader/blob/master/photos/after4.jpg"/></div>
+
+- UI before refactor 
+<div align="center">
+    <img width="300" alt="layout_phone" src="https://github.com/mcf1727/XYZReader/blob/master/photos/before1.jpg"/>     <img width="300" alt="layout_phone" src="https://github.com/mcf1727/XYZReader/blob/master/photos/before2.jpg"/>
+</div>
+
+<div align="center"><img width="600" alt="layout_tablet" src="https://github.com/mcf1727/XYZReader/blob/master/photos/before3.jpg"/></div>
+
+<div align="center"><img width="600" alt="layout_tablet" src="https://github.com/mcf1727/XYZReader/blob/master/photos/before4.jpg"/></div>
+
