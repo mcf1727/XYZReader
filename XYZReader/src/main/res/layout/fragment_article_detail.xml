@@ -17,7 +17,7 @@
             android:fitsSystemWindows="true"
             app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
             app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-            app:expandedTitleMarginStart="72dp"
+            app:expandedTitleMarginStart="@dimen/detail_collapsing_toolbar_expanded_title_margin_start"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed" >
 
@@ -33,8 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-
-                app:contentInsetStart="72dp"
+                app:contentInsetStart="@dimen/detail_toolbar_content_insert_start"
                 app:layout_collapseMode="pin" >
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -44,25 +43,24 @@
         android:id="@+id/meta_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:orientation="vertical"
         android:paddingLeft="@dimen/detail_inner_horiz_margin"
-        android:paddingRight="@dimen/detail_inner_horiz_margin"
         android:paddingTop="@dimen/detail_metabar_vert_padding"
-        android:paddingBottom="@dimen/detail_metabar_vert_padding" >
-        <!--                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding"-->
+        android:paddingRight="@dimen/detail_inner_horiz_margin"
+        android:paddingBottom="@dimen/detail_metabar_vert_padding"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <TextView
             android:id="@+id/article_title"
             style="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
             android:fontFamily="sans-serif-condensed"
-            android:textStyle="bold"
+            android:lineSpacingMultiplier="@fraction/detail_title_line_spacing_multiplier"
+            android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
             android:textSize="@dimen/detail_title_text_size"
-            tools:text="Article Title"
-            android:lineSpacingMultiplier="0.9" />
+            android:textStyle="bold"
+            tools:text="Article Title" />
 
         <TextView
             android:id="@+id/article_byline"
@@ -71,30 +69,29 @@
             android:layout_height="wrap_content"
             tools:text="Article byline" />
 
-    <ScrollView
-        android:id="@+id/scrollview"
-        android:layout_width="match_parent"
-        android:nestedScrollingEnabled="true"
-        android:layout_height="wrap_content" >
-        <TextView
-            android:id="@+id/article_body"
-            style="?android:attr/textAppearanceMedium"
+        <ScrollView
+            android:id="@+id/scrollview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-            android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-            android:paddingBottom="@dimen/detail_body_bottom_margin"
-            android:textColor="@color/dark_grey"
-            android:textColorLink="@color/theme_accent"
-            android:textSize="@dimen/detail_body_text_size"
-            android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
-    </ScrollView>
+            android:nestedScrollingEnabled="true">
+
+            <TextView
+                android:id="@+id/article_body"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+                android:paddingBottom="@dimen/detail_body_bottom_margin"
+                android:textColor="@color/dark_grey"
+                android:textColorLink="@color/theme_accent"
+                android:textSize="@dimen/detail_body_text_size" />
+        </ScrollView>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         app:fabSize="normal"
         app:elevation="@dimen/fab_elevation"
-        app:pressedTranslationZ="12dp"
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"
         android:layout_gravity="end|bottom"
 
         android:id="@+id/share_fab"
@@ -106,110 +103,4 @@
         android:layout_height="56dp"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin" />
-
-<!--    <FrameLayout-->
-<!--                android:id="@+id/photo_container"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@color/photo_placeholder"-->
-<!--                android:scaleType="centerCrop" >-->
-<!--                &lt;!&ndash;suppress AndroidLintContentDescription &ndash;&gt;-->
-<!--&lt;!&ndash;                <ImageView&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:id="@+id/photo"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_height="wrap_content" />&ndash;&gt;-->
-
-<!--                <View-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="112dp"-->
-<!--                    android:background="@drawable/photo_background_protection" />-->
-
-<!--            </FrameLayout>-->
-<!--    -->
-<!--    <com.example.xyzreader.ui.ObservableScrollView-->
-<!--        android:id="@+id/scrollview"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical">-->
-<!--            -->
-<!--            <com.example.xyzreader.ui.MaxWidthLinearLayout-->
-<!--                android:orientation="vertical"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:maxWidth="@dimen/detail_card_max_width"-->
-<!--                android:background="#fff"-->
-<!--                android:elevation="2dp"-->
-<!--                android:layout_marginTop="@dimen/detail_card_top_margin">-->
-
-<!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:id="@+id/meta_bar"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:background="#333"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_gravity="bottom"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:orientation="vertical"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:paddingLeft="@dimen/detail_inner_horiz_margin"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:paddingRight="@dimen/detail_inner_horiz_margin"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:paddingTop="@dimen/detail_metabar_vert_padding"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:paddingBottom="@dimen/detail_metabar_vert_padding"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding">&ndash;&gt;-->
-
-<!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:id="@+id/article_title"&ndash;&gt;-->
-<!--&lt;!&ndash;                        style="?android:attr/textAppearanceLarge"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:fontFamily="sans-serif-condensed"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:textColor="#fff"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:textStyle="bold"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:textSize="@dimen/detail_title_text_size"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:lineSpacingMultiplier="0.9" />&ndash;&gt;-->
-
-<!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:id="@+id/article_byline"&ndash;&gt;-->
-<!--&lt;!&ndash;                        style="?android:attr/textAppearanceSmall"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                        android:textColor="#8fff" />&ndash;&gt;-->
-<!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
-
-<!--&lt;!&ndash;                <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:id="@+id/article_body"&ndash;&gt;-->
-<!--&lt;!&ndash;                    style="?android:attr/textAppearanceMedium"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_marginLeft="@dimen/detail_inner_horiz_margin"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_marginRight="@dimen/detail_inner_horiz_margin"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:paddingBottom="@dimen/detail_body_bottom_margin"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textColor="@color/dark_grey"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textColorLink="@color/theme_accent"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textSize="@dimen/detail_body_text_size"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />&ndash;&gt;-->
-
-<!--            </com.example.xyzreader.ui.MaxWidthLinearLayout>-->
-<!--        </LinearLayout>-->
-<!--    </com.example.xyzreader.ui.ObservableScrollView>-->
-
-<!--&lt;!&ndash;    <ImageButton&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:id="@+id/share_fab"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;        android:stateListAnimator="@anim/fab_state_list_anim"&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:background="@drawable/add_fab_background"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:layout_gravity="bottom|end"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:layout_marginRight="@dimen/fab_margin"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:layout_marginBottom="@dimen/fab_margin"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:layout_width="56dp"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:layout_height="56dp"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:src="@drawable/ic_share"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;        android:elevation="@dimen/fab_elevation"&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;        android:contentDescription="@string/action_share"&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;    />&ndash;&gt;-->
-
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

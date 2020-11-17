@@ -79,9 +79,15 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         LoaderManager.getInstance(this).initLoader(0, null, this);
 
-        if (savedInstanceState == null) {
-            refresh();
-        }
+//        if (savedInstanceState == null) {
+//            refresh();
+//        }
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refresh();
+            }
+        });
     }
 
     private void refresh() {

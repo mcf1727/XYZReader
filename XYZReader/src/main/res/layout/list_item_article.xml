@@ -2,10 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="4dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginRight="4dp"
-    android:layout_marginBottom="4dp"
+    android:layout_margin="@dimen/list_item__margin"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground">
@@ -35,11 +32,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="4"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="4dp"
+            android:maxLines="@integer/list_title_maxlines"
+            android:paddingLeft="@dimen/list_item_side_margin"
+            android:paddingTop="@dimen/list_title_top_margin"
+            android:paddingRight="@dimen/list_item_side_margin"
+            android:paddingBottom="@dimen/list_title_bottom_margin"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toTopOf="@id/article_subtitle" />
 
@@ -49,10 +46,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="2"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"
+            android:maxLines="@integer/list_subtitle_maxlines"
+            android:paddingLeft="@dimen/list_item_side_margin"
+            android:paddingRight="@dimen/list_item_side_margin"
+            android:paddingBottom="@dimen/list_subtitle_bottom_margin"
             android:textColor="@color/light_grey"
             app:layout_constraintBottom_toBottomOf="@id/thumbnail" />
 

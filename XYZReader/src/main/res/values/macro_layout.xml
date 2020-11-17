@@ -1,8 +1,16 @@
 <resources>
     <!-- list -->
     <dimen name="list_side_margin">4dp</dimen>
+    <dimen name="list_bottom_margin">28dp</dimen>
     <dimen name="list_toolbar_side_margin">0dp</dimen>
+    <dimen name="list_item__margin">4dp</dimen>
+    <dimen name="list_item_side_margin">16dp</dimen>
     <integer name="list_column_count">1</integer>
+    <dimen name="list_title_top_margin">16dp</dimen>
+    <dimen name="list_title_bottom_margin">4dp</dimen>
+    <dimen name="list_subtitle_bottom_margin">16dp</dimen>
+    <integer name="list_title_maxlines">4</integer>
+    <integer name="list_subtitle_maxlines">2</integer>
 
     <!-- detail -->
     <bool name="detail_is_card">false</bool>
