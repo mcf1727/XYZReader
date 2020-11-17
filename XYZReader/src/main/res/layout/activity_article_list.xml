@@ -19,13 +19,13 @@
         android:background="?colorPrimary" >
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar_layout"
+            android:id="@+id/collapsing_toolbar_layout_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed" >
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_main"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -40,7 +40,6 @@
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/logo" />
             </androidx.appcompat.widget.Toolbar>
-
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
